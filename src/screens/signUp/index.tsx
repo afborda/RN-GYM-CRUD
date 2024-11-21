@@ -6,20 +6,18 @@ import {
   VStack,
   ScrollView
 } from "@gluestack-ui/themed";
-
-import { AuthNavigatorRoutesProps } from "@routes/auth.routes";
-
 import BackgroundImg from "@assets/background.png";
 import Logo from "@assets/logo.svg";
 import { Input } from "@components/Input";
 import { Button } from "@components/Button";
 import { useNavigation } from "@react-navigation/native";
+import { AuthNavigatorRoutesProps } from "@routes/auth.routes";
 
-export function SignIn() {
-  const navigator = useNavigation<AuthNavigatorRoutesProps>();
+export function SignUp() {
+  const navigation = useNavigation<AuthNavigatorRoutesProps>();
 
-  const handleNavigateToSignUp = () => {
-    navigator.navigate("signUp");
+  const handleNavigateToSignIn = () => {
+    navigation.navigate("signIn");
   };
 
   return (
@@ -42,8 +40,10 @@ export function SignIn() {
             <Logo />
             <Text color="$gray100">Treine sua mente o seu corpo.</Text>
           </Center>
-          <Center gap="$2">
-            <Heading color="$gray100">Acessse a conta</Heading>
+
+          <Center gap="$2" flex={1}>
+            <Heading color="$gray100">Crie sua conta</Heading>
+            <Input placeholder="Nome" />
             <Input
               placeholder="E-mail"
               keyboardType="email-address"
@@ -51,21 +51,15 @@ export function SignIn() {
             />
             <Input placeholder="Senha" secureTextEntry />
 
-            <Button title="Acessar" />
+            <Button title="Criar e acessar " />
           </Center>
-          <Center flex={1} justifyContent="flex-end" mt={4}>
-            <Text color="$gray100" fontSize="$sm" mb="$3" fontFamily="$body">
-              Ainda não tem uma conta?{" "}
-              <Text color="$green700" fontFamily="$body">
-                Cadastre-se
-              </Text>
-            </Text>
-            <Button
-              title="Cadastrar"
-              variant="outline"
-              onPress={handleNavigateToSignUp}
-            />
-          </Center>
+
+          <Button
+            title="Voltar para o login"
+            variant="outline"
+            mt={"$12"}
+            onPress={handleNavigateToSignIn}
+          />
         </VStack>
       </VStack>
     </ScrollView>
