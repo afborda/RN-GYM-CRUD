@@ -76,8 +76,7 @@ export function AppRoutes() {
         name="exercise"
         component={Exercise}
         options={{
-          tabBarButton: () => null,
-          tabBarStyle: { display: "none" } // Esconde o botão da tabBar
+          tabBarButton: () => null // Oculta da barra
         }}
       />
     </Navigator>

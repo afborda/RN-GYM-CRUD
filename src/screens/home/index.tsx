@@ -1,9 +1,12 @@
-import { Center, Text } from "@gluestack-ui/themed";
+import { Group } from "@components/Group";
+import { HomeHeader } from "@components/HomeHeader";
+import { VStack } from "@gluestack-ui/themed";
 
 export const Home = () => {
   return (
-    <Center flex={1}>
-      <Text>Home</Text>
-    </Center>
+    <VStack flex={1}>
+      <HomeHeader />
+      <Group name="Costas" isActive={true} />
+    </VStack>
   );
 };
