@@ -76,7 +76,10 @@ export function AppRoutes() {
         name="exercise"
         component={Exercise}
         options={{
-          tabBarButton: () => null // Oculta da barra
+          tabBarButton: () => null, // Oculta da barra
+          tabBarItemStyle: {
+            display: "none"
+          }
         }}
       />
     </Navigator>
