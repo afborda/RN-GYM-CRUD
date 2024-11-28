@@ -13,7 +13,7 @@ export function HomeHeader() {
       />
       <VStack flex={1}>
         <Text color="$gray100" fontSize="$sm">
-          Ola,
+          Olá,
         </Text>
         <Heading color="$gray100" fontSize="$md">
           Abner Fonseca

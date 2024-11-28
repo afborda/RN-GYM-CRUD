@@ -10,13 +10,14 @@ export const Group = ({ name, isActive, ...rest }: Props) => {
   return (
     <Button
       minWidth="$24"
+      mr="$3"
       h="$10"
       bg="$gray600"
       rounded="$md"
       justifyContent="center"
       alignItems="center"
-      borderColor="$gray500"
-      borderWidth={isActive ? 1 : 0}
+      borderColor="$green500"
+      borderWidth={isActive ? 2 : 0}
       sx={{
         ":active": {
           borderWidth: 1
@@ -25,7 +26,7 @@ export const Group = ({ name, isActive, ...rest }: Props) => {
       {...rest}
     >
       <Text
-        color={isActive ? "$green500" : "gray200"}
+        color={isActive ? "$green500" : "$gray200"}
         textTransform="uppercase"
         fontSize="$xs"
         fontFamily="$heading"
