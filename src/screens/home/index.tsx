@@ -65,7 +65,9 @@ export const Home = () => {
         renderItem={({ item }) => (
           <Group
             name={item}
-            isActive={groupSelected === item}
+            isActive={
+              groupSelected.toLocaleLowerCase() === item.toLocaleLowerCase()
+            }
             onPress={() => setGroupSelected(item)}
           />
         )}
@@ -78,7 +80,7 @@ export const Home = () => {
       <VStack px="$8" flex={1}>
         <HStack justifyContent="space-between" mb="$5" alignItems="center">
           <Heading color="$gray200" fontSize="$md" fontFamily="$heading">
-            Exerciícios
+            Exercícios
           </Heading>
           <Text color="$gray200" fontSize="$sm" fontFamily="$body">
             {exercices.length}
