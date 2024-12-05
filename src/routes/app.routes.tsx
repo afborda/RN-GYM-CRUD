@@ -27,7 +27,7 @@ import { Platform } from "react-native";
 export function AppRoutes() {
   const { tokens } = gluestackUIConfig;
 
-  const iconsSize = tokens.space[6];
+  const iconsSize = tokens.space[7];
 
   return (
     <Navigator

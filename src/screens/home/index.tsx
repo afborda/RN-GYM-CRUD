@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 
 import { Group } from "@components/Group";
 
@@ -6,6 +7,7 @@ import { HomeHeader } from "@components/HomeHeader";
 import { HStack, Heading, Text, VStack, set } from "@gluestack-ui/themed";
 import { FlatList } from "react-native";
 import { ExerciseCard } from "@components/ExerciseCard";
+import { AppNavigatorRoutesProps } from "@routes/app.routes";
 
 export const Home = () => {
   const [exercices, setExercices] = useState([
@@ -56,6 +58,12 @@ export const Home = () => {
   ]);
   const [groupSelected, setGroupSelected] = useState("costa");
 
+  const navigate = useNavigation<AppNavigatorRoutesProps>();
+
+  const handleOpenExerciseDetails = () => {
+    navigate.navigate("exercise");
+  };
+
   return (
     <VStack flex={1}>
       <HomeHeader />
@@ -96,6 +104,7 @@ export const Home = () => {
               image={item.image}
               series={item.series}
               repetitions={item.repetitions}
+              onPress={handleOpenExerciseDetails}
             />
           )}
           showsVerticalScrollIndicator={false}
